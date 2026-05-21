@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Akun - Kost Modern</title>
+    <link rel="stylesheet" href="daftar.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="../icon/favicon-32x32.png" />
+  </head>
+  <body>
+    <div class="register-wrapper">
+      <div class="register-card">
+        <div class="profile-upload">
+          <div class="image-preview" id="imagePreview">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+              alt="Profile Preview"
+              id="profileImg"
+            />
+
+            <label for="fileUpload" class="upload-label">
+              <span class="icon-camera">📷</span>
+            </label>
+          </div>
+          <!-- Tambah name="avatar_url" untuk database -->
+          <input
+            type="file"
+            id="fileUpload"
+            name="avatar_url"
+            hidden
+            accept="image/*"
+          />
+          <p class="upload-text">Ketuk untuk unggah foto</p>
+        </div>
+        <div class="register-header">
+          <h2>Buat <span>Akun</span></h2>
+          <p>Mulai cari hunian nyamanmu sekarang.</p>
+        </div>
+
+        <!-- Tambah id="registrationForm" untuk JavaScript -->
+        <form action="#" class="register-form" id="registrationForm">
+          <div class="input-group">
+            <label>Nama Lengkap</label>
+            <!-- Tambah name="name" -->
+            <input
+              type="text"
+              name="name"
+              placeholder="Masukkan nama lengkap"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Nomor Handphone</label>
+            <!-- Tambah name="phone" -->
+            <input type="tel" name="phone" placeholder="0812xxxx" required />
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <!-- Tambah name="email" -->
+            <input
+              type="email"
+              name="email"
+              placeholder="contoh@mail.com"
+              required
+            />
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label>Password</label>
+              <!-- Tambah id="password" dan name="password" -->
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="******"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Ulangi Password</label>
+              <!-- Tambah id="confirmPassword" -->
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="******"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Foto KTP (Format: JPG/PNG)</label>
+            <div class="ktp-upload-area" id="ktpDropzone">
+              <!-- Tambah name="ktp_url" -->
+              <input
+                type="file"
+                id="ktpInput"
+                name="ktp_url"
+                hidden
+                accept="image/*"
+              />
+              <div class="ktp-content">
+                <span class="ktp-icon">🪪</span>
+                <p id="ktpFileName">Klik atau seret foto KTP ke sini</p>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-register">Daftar Sekarang</button>
+        </form>
+
+        <div class="register-footer">
+          <p>
+            Sudah punya akun? <a href="../LoginPage/login.html">Masuk disini</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panggil file JS lu di sini -->
+    <script src="daftar.js"></script>
+  </body>
+</html>
