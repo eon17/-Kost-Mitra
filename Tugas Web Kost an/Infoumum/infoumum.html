@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pusat Bantuan - Kost Keiren</title>
+    <link rel="stylesheet" href="infoumum.css" />
+    <!-- Menggunakan Lucide Icons untuk ikon yang clean -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="../icon/favicon-32x32.png" />
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <!-- Logo di Kiri -->
+        <div
+          class="nav-logo"
+          onclick="window.location.href = '../HomePage/HomePage.html'"
+        >
+          <a href="#">Kost <span>Keiren</span></a>
+        </div>
+
+        <!-- Menu di Kanan -->
+        <div class="nav-links">
+          <a href="#" onclick="window.location.href = '../LoginPage/login.html'"
+            >Penyewa Kos</a
+          >
+          <a
+            href="#"
+            onclick="window.location.href = '/LoginPage/loginadmin.html'"
+            >Pemilik Kos</a
+          >
+          <a href="#" class="active-pill">Info Umum</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- Section: Paling Sering Dicari -->
+      <section class="faq-section">
+        <h2 class="section-title">Paling Sering Dicari</h2>
+        <div class="grid-3">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <div class="icon-box"><i data-lucide="map-pin"></i></div>
+            <div class="faq-text">
+              <h3>Sewa Kos</h3>
+              <p>Bagaimana cara ajukan sewa di Kost Keiren?</p>
+              <a href="#" class="link-more">Selengkapnya</a>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <div class="icon-box"><i data-lucide="key"></i></div>
+            <div class="faq-text">
+              <h3>Sewa Kos</h3>
+              <p>Bagaimana cara check-in di kos?</p>
+              <a href="#" class="link-more">Selengkapnya</a>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <div class="icon-box"><i data-lucide="credit-card"></i></div>
+            <div class="faq-text">
+              <h3>Pembayaran Penyewa</h3>
+              <p>Bagaimana cara mengajukan refund?</p>
+              <a href="#" class="link-more">Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Section: Kategori Bantuan -->
+      <section class="category-section">
+        <h2 class="section-title">Kategori Bantuan</h2>
+        <div class="grid-4">
+          <!-- Kategori 1 -->
+          <div class="cat-group">
+            <div class="cat-header">
+              <i data-lucide="ticket"></i>
+              <h3>Promo Penyewa</h3>
+            </div>
+            <ul>
+              <li><a href="#">Promo dan Voucher</a></li>
+              <li><a href="#">Promo Ngebut</a></li>
+            </ul>
+          </div>
+          <!-- Kategori 2 -->
+          <div class="cat-group">
+            <div class="cat-header">
+              <i data-lucide="user"></i>
+              <h3>Akun Penyewa</h3>
+            </div>
+            <ul>
+              <li><a href="#">Pendaftaran</a></li>
+              <li><a href="#">Pengaturan</a></li>
+              <li><a href="#">Verifikasi</a></li>
+              <li><a href="#">Keamanan Akun</a></li>
+            </ul>
+          </div>
+          <!-- Kategori 3 -->
+          <div class="cat-group">
+            <div class="cat-header">
+              <i data-lucide="layout"></i>
+              <h3>Produk dan Fitur</h3>
+            </div>
+            <ul>
+              <li><a href="#">Chat</a></li>
+              <li><a href="#">Pengajuan Sewa</a></li>
+              <li><a href="#">Bayar Kos</a></li>
+              <li><a href="#">KeirenPoin</a></li>
+            </ul>
+          </div>
+          <!-- Kategori 4 -->
+          <div class="cat-group">
+            <div class="cat-header">
+              <i data-lucide="search"></i>
+              <h3>Pencarian Kos</h3>
+            </div>
+            <ul>
+              <li><a href="#">Pencarian Kos</a></li>
+              <li><a href="#">Informasi Detail Kos</a></li>
+              <li><a href="#">Survei Kos</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
