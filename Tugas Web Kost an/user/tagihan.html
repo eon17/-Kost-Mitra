@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tagihan Saya - Kost Keiren</title>
+    <link rel="stylesheet" href="tagihan.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="user.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <style>
+      /* Sembunyikan konten sampai verifikasi login selesai */
+      body {
+        display: none;
+      }
+
+      /* --- MAGIC CSS UNTUK PRINT NOTA --- */
+      @media screen {
+        /* Sembunyikan nota saat user melihat layar biasa */
+        #notaCetak {
+          display: none;
+        }
+      }
+
+      @media print {
+        /* Sembunyikan SEMUA elemen website saat print */
+        body * {
+          visibility: hidden;
+        }
+
+        /* Tampilkan HANYA area Nota */
+        #notaCetak,
+        #notaCetak * {
+          visibility: visible;
+        }
+
+        /* Posisikan nota di pojok kiri atas kertas print */
+        #notaCetak {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          padding: 20px;
+        }
+      }
+    </style>
+    <link rel="icon" type="image/png" href="../icon/favicon-32x32.png" />
+  </head>
+  <body>
+    <div id="navbar-component"></div>
+
+    <main class="content" style="padding-top: 20px">
+      <div id="punya-kamar" style="display: none">
+        <div class="content-header" style="margin-bottom: 25px">
+          <div class="title-area">
+            <h1>Tagihan & Pembayaran</h1>
+            <p>Pantau status pembayaran dan riwayat transaksi kost Anda.</p>
+          </div>
+        </div>
+
+        <div class="billing-summary">
+          <div class="summary-card total">
+            <p>Total Tagihan Aktif</p>
+            <h3 id="totalTagihan">Rp 0</h3>
+            <span class="due-date" id="jatuhTempo">Jatuh tempo: -</span>
+          </div>
+          <div class="summary-card status">
+            <p>Status Terakhir</p>
+            <h3 class="status-unpaid" id="statusBayar">Memuat...</h3>
+            <button
+              class="btn-pay-now"
+              id="btnBayar"
+              onclick="bayarKeWA()"
+              style="display: none"
+            >
+              Bayar Sekarang
+            </button>
+
+            <input
+              type="file"
+              id="inputBuktiTransfer"
+              accept="image/*"
+              style="display: none"
+            />
+            <button
+              type="button"
+              id="btnUploadBukti"
+              style="
+                display: none;
+                width: 100%;
+                background-color: #25d366;
+                color: white;
+                border: none;
+                padding: 12px;
+                border-radius: 8px;
+                font-weight: 700;
+                cursor: pointer;
+                margin-top: 10px;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                font-family: &quot;Montserrat&quot;, sans-serif;
+              "
+            >
+              <i class="fas fa-upload"></i> Unggah Bukti
+            </button>
+          </div>
+        </div>
+
+        <div class="history-section">
+          <h2>Riwayat Pembayaran</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>No. Invoice</th>
+                  <th>Periode Sewa</th>
+                  <th>Jumlah</th>
+                  <th>Metode</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="billing-table-body">
+                <tr>
+                  <td colspan="6" style="text-align: center">
+                    Memuat riwayat...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="belum-punya-kamar"
+        style="display: none; text-align: center; padding: 100px 20px"
+      >
+        <div style="padding: 40px; border-radius: 15px">
+          <i class="ph ph-receipt" style="font-size: 80px; color: #ddd"></i>
+          <h2 style="margin-top: 20px; color: #333">Tagihan Belum Tersedia</h2>
+          <p style="color: #666; margin-bottom: 25px">
+            Kamu belum memiliki kamar aktif, sehingga tidak ada tagihan yang
+            perlu dibayar.
+          </p>
+          <a
+            href="user.html"
+            class="btn-extend"
+            style="text-decoration: none; display: inline-block"
+            >Cari Kamar Sekarang</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <div class="nota-print-box" id="notaCetak">
+      <div class="nota-header">
+        <div class="nota-logo">
+          <h2>KostKeiren</h2>
+        </div>
+        <div class="nota-owner-info">
+          <strong>KOST KEIREN</strong><br />
+          <p id="printNoHpAdmin">Loading...</p>
+        </div>
+      </div>
+
+      <hr class="nota-divider" />
+
+      <div class="nota-meta">
+        <div class="meta-left">
+          <p>Kepada:</p>
+          <h3 id="printNamaUser">Nama Penghuni</h3>
+          <p id="printKamarUser">No. Kamar</p>
+        </div>
+        <div class="meta-right">
+          <h2 id="printInvoiceID">INVOICE #000000</h2>
+          <p>Tanggal Sewa: <span id="printTglSewa">-</span></p>
+          <p>Sampai Tanggal: <span id="printTglSelesai">-</span></p>
+        </div>
+      </div>
+
+      <table class="nota-table">
+        <thead>
+          <tr>
+            <th>KETERANGAN</th>
+            <th>HARGA</th>
+            <th>SEWA</th>
+            <th>JUMLAH</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Sewa Kamar</strong><br />
+              <span id="printDetailKamar">No. -</span>
+            </td>
+            <td id="printHargaKamar">Rp 0</td>
+            <td>1 Bulan</td>
+            <td id="printSubtotalKamar">Rp 0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="nota-footer-section">
+        <div class="footer-left">
+          <p>Tanggal Cetak Nota:</p>
+          <p id="printTglBayar">-</p>
+          <div class="stempel-lunas" id="stempelNota">[ LUNAS ]</div>
+        </div>
+        <div class="footer-right">
+          <div class="calc-row">
+            <span>JUMLAH</span> <strong id="printTotalAkhir">Rp 0</strong>
+          </div>
+          <div class="calc-row"><span>Diskon</span> <strong>Rp 0</strong></div>
+          <div class="calc-row total-line">
+            <span>TOTAL</span> <strong id="printGrandTotal">Rp 0</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      async function loadNavbar() {
+        try {
+          const response = await fetch("widget/navbar.html");
+          const data = await response.text();
+          document.getElementById("navbar-component").innerHTML = data;
+          setActiveMenu();
+          if (typeof muatDataTagihan === "function") {
+            muatDataTagihan();
+          }
+        } catch (error) {
+          console.error("Gagal memuat navbar:", error);
+        }
+      }
+
+      function setActiveMenu() {
+        let currentPage = window.location.pathname.split("/").pop();
+        if (currentPage === "" || currentPage === "/") {
+          currentPage = "user.html";
+        }
+        const navLinks = document.querySelectorAll(".sub-nav a");
+        navLinks.forEach((link) => {
+          const pageAttr = link.getAttribute("data-page");
+          if (pageAttr === currentPage) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      loadNavbar();
+    </script>
+    <script src="tagihan.js"></script>
+  </body>
+</html>
