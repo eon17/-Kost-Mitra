@@ -1,0 +1,210 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  /* Background Navy agar kontras dengan card putih */
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.register-wrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-header h2 {
+  font-size: 1.8rem;
+  color: #1a1a2e;
+  font-weight: 700;
+}
+
+.register-header h2 span {
+  color: #4facfe;
+}
+
+.register-header p {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Form Styling */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input {
+  padding: 14px 16px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #4facfe;
+  background-color: #f0f8ff;
+}
+
+/* Button */
+.btn-register {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+}
+
+.btn-register:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(79, 172, 254, 0.4);
+}
+
+/* Footer Link */
+.register-footer {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.register-footer p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.register-footer a {
+  color: #4facfe;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+/* PROFILE ICON STYLE (Sesuai dengan gambar) */
+.profile-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.image-preview {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid #4facfe;
+  padding: 3px;
+  background: white;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.upload-text {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* --- TOMBOL BACK DI DALAM CARD --- */
+.btn-back {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #1a1a2e;
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: #f0f8ff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.btn-back:hover {
+  background: #4facfe;
+  color: #ffffff;
+  transform: translateX(-5px);
+  box-shadow: 0 6px 15px rgba(79, 172, 254, 0.3);
+}
+
+.btn-back span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .btn-back {
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 480px) {
+  .register-card {
+    padding: 30px 20px;
+  }
+
+  .register-header h2 {
+    font-size: 1.5rem;
+  }
+}

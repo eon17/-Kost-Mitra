@@ -1,0 +1,396 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f8faff;
+  color: #333;
+}
+
+/* NAVBAR (SAMA DENGAN DASHBOARD) */
+.dash-nav {
+  background: #fff;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.logo span {
+  color: #4facfe;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.user-profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user-info {
+  text-align: right;
+}
+.user-info .name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.user-info .role {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* SUB NAV */
+.sub-nav {
+  background: #fff;
+  padding: 10px 40px;
+  display: flex;
+  gap: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.sub-nav a {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.sub-nav a:hover {
+  color: #4facfe;
+  transform: translateY(-2px);
+}
+.sub-nav a.active {
+  color: #4facfe;
+  border-bottom: 2px solid #4facfe;
+}
+
+/* CONTENT AREA */
+.content {
+  padding: 30px 40px;
+}
+.content-header {
+  margin-bottom: 30px;
+}
+.title-area h1 {
+  font-size: 1.4rem;
+  color: #1a1a2e;
+}
+.title-area p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* MY ROOM SPECIFIC STYLES */
+.my-room-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.room-main-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.room-image {
+  position: relative;
+  height: 300px;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-number-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.room-info-basic {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.status-tenancy {
+  margin-bottom: 25px;
+}
+.status-tenancy .label {
+  display: block;
+  font-size: 0.75rem;
+  color: #aaa;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.status-tenancy .value-active {
+  color: #2ecc71;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.info-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info-item i {
+  font-size: 1.8rem;
+  color: #4facfe;
+}
+.info-item p {
+  font-size: 0.75rem;
+  color: #888;
+}
+.info-item strong {
+  font-size: 0.95rem;
+  color: #1a1a2e;
+}
+
+.btn-extend {
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-extend:hover {
+  background: #4facfe;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+}
+
+/* DETAILS GRID */
+.room-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.detail-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-top: 5svh;
+}
+
+.detail-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a1a2e;
+}
+
+.amenity-list,
+.rule-list {
+  list-style: none;
+}
+.amenity-list li,
+.rule-list li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.amenity-list i {
+  color: #2ecc71;
+}
+
+/* Styling Form Laporan */
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #3498db; /* Sesuaikan dengan warna brand */
+}
+
+.btn-submit-report {
+  background-color: #e74c3c; /* Warna merah untuk aksi darurat/laporan */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s;
+}
+
+.btn-submit-report:hover {
+  background-color: #c0392b;
+}
+
+.btn-submit-report i {
+  font-size: 1.2rem;
+}
+
+/* --- RESPONSIVE RULES --- */
+
+/* Pengaturan Container Utama */
+@media (max-width: 992px) {
+  .my-room-container {
+    flex-direction: column; /* Gambar dan info dasar akan menumpuk vertikal */
+    gap: 20px;
+  }
+}
+
+/* Pengaturan Grid Card (Fasilitas, Peraturan, Lapor) */
+@media (max-width: 768px) {
+  .room-details-grid {
+    grid-template-columns: 1fr; /* Menjadi 1 kolom saja di HP */
+    gap: 15px;
+  }
+
+  .content {
+    padding: 15px; /* Mengurangi padding luar agar lebih luas di layar kecil */
+  }
+
+  .title-area h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Membuat tombol lapor memenuhi lebar layar di HP agar mudah di-klik */
+  .btn-submit-report {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  /* Penyesuaian Navigasi Bawah (Jika ada) */
+  .sub-nav {
+    overflow-x: auto; /* Memungkinkan scroll horizontal jika menu terlalu panjang */
+    justify-content: flex-start;
+    padding: 10px;
+  }
+
+  .sub-nav a {
+    white-space: nowrap; /* Teks menu tidak patah ke bawah */
+    font-size: 0.85rem;
+  }
+}
+
+/* Optimasi Sentuhan untuk Form */
+@media (max-width: 480px) {
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Mencegah auto-zoom pada iPhone saat input di-klik */
+    padding: 12px;
+  }
+
+  .room-number-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    max-width: 16svh;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .room-main-card {
+    grid-template-columns: 1fr;
+  }
+  .room-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 20px;
+  }
+  .info-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

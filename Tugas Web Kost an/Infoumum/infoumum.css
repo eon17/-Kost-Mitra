@@ -1,0 +1,191 @@
+:root {
+  --primary-blue: #1872d2; /* Biru Deep Navy lu */
+  --accent-orange: #ffb145; /* Kuning/Emas Keiren lu */
+  --text-dark: #1f2937;
+  --text-gray: #6b7280;
+  --bg-light: #ffffff;
+  --border-color: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding-top: 80px;
+}
+
+/* --- NAVBAR FIXED DEEP NAVY --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 0;
+  background-color: var(--primary-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.nav-logo a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-logo a span {
+  color: var(--accent-orange);
+}
+
+/* Nav Links Kanan */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Info Umum Pill Style */
+.active-pill {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px 20px !important;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.active-pill:hover {
+  background: white;
+  color: var(--primary-blue) !important;
+}
+
+/* --- CONTENT --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.faq-section,
+.category-section {
+  padding: 40px 0;
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* FAQ Item */
+.faq-item {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-box i {
+  color: var(--text-dark);
+  width: 24px;
+  height: 24px;
+}
+
+.faq-text h3 {
+  font-size: 11px;
+  color: var(--text-gray);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.faq-text p {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.link-more {
+  color: var(--text-gray);
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Kategori */
+.cat-group {
+  margin-bottom: 20px;
+}
+
+.cat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cat-header i {
+  width: 20px;
+}
+
+.cat-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cat-group ul {
+  list-style: none;
+}
+
+.cat-group ul li {
+  margin-bottom: 10px;
+}
+
+.cat-group ul li a {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+.cat-group ul li a:hover {
+  color: var(--primary-blue);
+}

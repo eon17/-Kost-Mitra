@@ -1,0 +1,256 @@
+:root {
+  --primary: #4facfe;
+  --dark: #1a1a2e;
+  --bg: #f8faff;
+  --text-muted: #8898aa;
+  --white: #ffffff;
+  --shadow: 0 10px 40px rgba(26, 26, 46, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--dark);
+  padding: 40px 20px;
+}
+
+/* Tombol Kembali */
+.back-nav {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.back-nav:hover {
+  color: var(--primary);
+  transform: translateX(-5px);
+}
+
+/* Layout Container */
+.profile-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-section {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.header-section h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.header-section p {
+  color: var(--text-muted);
+}
+
+/* Grid System */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 30px;
+}
+
+.profile-card {
+  background: var(--white);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 30px;
+}
+
+/* Sidebar Styling */
+.avatar-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.camera-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--primary);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid #fff;
+  transition: 0.3s;
+}
+
+.camera-icon:hover {
+  transform: scale(1.1);
+  background: var(--dark);
+}
+
+.user-meta h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.badge-role {
+  background: #eef6ff;
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.side-menu a.active,
+.side-menu a:hover {
+  background: #f0f7ff;
+  color: var(--primary);
+}
+
+/* Form Styling */
+.card-header {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 15px;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border-radius: 12px;
+  border: 1px solid #e0e6ed;
+  background: #f9fbff;
+  font-size: 0.95rem;
+  color: var(--dark);
+  transition: 0.3s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1);
+}
+
+/* Logout Button */
+.danger-zone {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #f0f2f5;
+}
+
+.btn-logout {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  background: #fff5f5;
+  color: #ff4d4d;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+  .back-nav {
+    left: 20px;
+  }
+}

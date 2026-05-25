@@ -1,0 +1,54 @@
+<!-- navbar.html --><style>
+  /* Sembunyikan konten sampai verifikasi login selesai */
+  body {
+    display: none;
+  }
+</style>
+<link rel="stylesheet" href="user.css" />
+
+<nav class="dash-nav">
+  <div class="nav-left">
+    <h2
+      class="logo"
+      onclick="window.location.href = 'user.html'"
+      style="cursor: pointer"
+    >
+      Kost<span>Keiren</span>
+    </h2>
+  </div>
+  <div class="nav-right">
+    <div class="user-profile">
+      <div class="user-info">
+        <p
+          class="name"
+          id="namaUser"
+          onclick="window.location.href = 'profile.html'"
+          style="cursor: pointer"
+        >
+          Memuat Nama...
+        </p>
+        <p class="role" id="roleUser">Memuat Role...</p>
+      </div>
+      <img
+        id="fotoProfil"
+        src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        alt="Profile"
+        onclick="window.location.href = 'profile.html'"
+        style="cursor: pointer"
+      />
+    </div>
+  </div>
+</nav>
+
+<div class="sub-nav">
+  <a href="user.html" data-page="user.html">
+    <i class="ph ph-magnifying-glass"></i> Cari Kamar
+  </a>
+  <a href="kamarsaya.html" data-page="kamarsaya.html">
+    <i class="ph ph-house"></i> Kamar Saya
+  </a>
+  <a href="tagihan.html" data-page="tagihan.html">
+    <i class="ph ph-receipt"></i> Tagihan
+  </a>
+</div>
+<script src=""></script>
